@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FuncDialog</class>
+ <widget class="QDialog" name="FuncDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1157</width>
+    <height>642</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/doge.jpg</normalon>
+   </iconset>
+  </property>
+  <widget class="QWidget" name="top" native="true">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>1121</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>1111</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>造字工房典黑（非商用）特细体</family>
+      <pointsize>28</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;center&gt;个人银行信息管理系统&lt;/center&gt;</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="left">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>130</y>
+     <width>251</width>
+     <height>501</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="creditbutoon">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>270</y>
+      <width>181</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>仿宋</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>信用卡管理</string>
+    </property>
+    <property name="icon">
+     <iconset resource="imagines.qrc">
+      <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cardbutton">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>120</y>
+      <width>181</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>仿宋</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>储蓄卡管理</string>
+    </property>
+    <property name="icon">
+     <iconset resource="imagines.qrc">
+      <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>910</x>
+     <y>140</y>
+     <width>221</width>
+     <height>491</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="page">
+    <widget class="QPushButton" name="storage_button1">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>100</y>
+       <width>211</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>仿宋</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>账户一栏</string>
+     </property>
+     <property name="icon">
+      <iconset resource="imagines.qrc">
+       <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="storage_button2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>260</y>
+       <width>211</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>仿宋</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>流水信息</string>
+     </property>
+     <property name="icon">
+      <iconset resource="imagines.qrc">
+       <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2">
+    <widget class="QPushButton" name="credit_button">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>100</y>
+       <width>211</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>仿宋</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>账户信息</string>
+     </property>
+     <property name="icon">
+      <iconset resource="imagines.qrc">
+       <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="credit_button_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>260</y>
+       <width>211</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>仿宋</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>流水信息</string>
+     </property>
+     <property name="icon">
+      <iconset resource="imagines.qrc">
+       <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_3">
+    <widget class="QLabel" name="welocme">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>211</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>仿宋</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>欢迎使用本&lt;br&gt;系统请在左&lt;br&gt;侧选择您将&lt;br&gt;要进行的操作</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="center" native="true">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>140</y>
+     <width>601</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <widget class="QStackedWidget" name="TOTAL">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>-30</y>
+      <width>601</width>
+      <height>521</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page_4">
+     <widget class="QStackedWidget" name="storage_func">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>10</y>
+        <width>511</width>
+        <height>491</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="page_7">
+       <widget class="QTableView" name="InfoBalance">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>491</width>
+          <height>361</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_8">
+       <widget class="QTableView" name="waterBalance">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>30</y>
+          <width>511</width>
+          <height>281</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>330</y>
+          <width>81</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>黑体</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>金额</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="changesline">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>330</y>
+          <width>121</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_6">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>380</y>
+          <width>71</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>黑体</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>类型</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="types">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>380</y>
+          <width>121</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>请选择类型</string>
+         </property>
+         <property name="icon">
+          <iconset resource="imagines.qrc">
+           <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>收入</string>
+         </property>
+         <property name="icon">
+          <iconset resource="imagines.qrc">
+           <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>支出</string>
+         </property>
+         <property name="icon">
+          <iconset resource="imagines.qrc">
+           <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
+         </property>
+        </item>
+       </widget>
+       <widget class="QPushButton" name="submitn">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>430</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>提交</string>
+        </property>
+        <property name="icon">
+         <iconset resource="imagines.qrc">
+          <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>351</y>
+          <width>141</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>请选择卡号</string>
+         </property>
+         <property name="icon">
+          <iconset resource="imagines.qrc">
+           <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>445989</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>467149</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>498138</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>440410</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>455086</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_5">
+     <widget class="QStackedWidget" name="credit_func">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>551</width>
+        <height>411</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page_9">
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>140</y>
+          <width>251</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>这是信用卡账户信息</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_10">
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>80</y>
+          <width>251</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>这是信用卡流水信息</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_6">
+     <widget class="QLabel" name="soulimage">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>20</y>
+        <width>251</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="imagines.qrc">:/doge.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>320</y>
+        <width>371</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>站酷快乐体2016修订版</family>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;center&gt;用一下爽一年&lt;br&gt;不爽不要钱&lt;center&gt;</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="imagines.qrc"/>
+ </resources>
+ <connections/>
+</ui>
