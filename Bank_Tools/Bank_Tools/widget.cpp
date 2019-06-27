@@ -22,7 +22,7 @@ void Widget::on_pushButton_clicked()
     QString password=ui->passline->text().trimmed();
     if((name=="王涛")&&(password=="123456"))
     {
-        qDebug()<<"登录成功";
+
 
         this->hide();
         func->show();

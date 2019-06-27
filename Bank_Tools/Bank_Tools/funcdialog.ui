@@ -50,9 +50,9 @@
   <widget class="QFrame" name="left">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>130</y>
-     <width>251</width>
+     <width>240</width>
      <height>501</height>
     </rect>
    </property>
@@ -86,10 +86,6 @@
     <property name="text">
      <string>信用卡管理</string>
     </property>
-    <property name="icon">
-     <iconset resource="imagines.qrc">
-      <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
-    </property>
    </widget>
    <widget class="QPushButton" name="cardbutton">
     <property name="geometry">
@@ -109,23 +105,19 @@
     <property name="text">
      <string>储蓄卡管理</string>
     </property>
-    <property name="icon">
-     <iconset resource="imagines.qrc">
-      <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
-    </property>
    </widget>
   </widget>
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
-     <x>910</x>
+     <x>920</x>
      <y>140</y>
      <width>221</width>
      <height>491</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QPushButton" name="storage_button1">
@@ -146,10 +138,6 @@
      <property name="text">
       <string>账户一栏</string>
      </property>
-     <property name="icon">
-      <iconset resource="imagines.qrc">
-       <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
-     </property>
     </widget>
     <widget class="QPushButton" name="storage_button2">
      <property name="geometry">
@@ -168,10 +156,6 @@
      </property>
      <property name="text">
       <string>流水信息</string>
-     </property>
-     <property name="icon">
-      <iconset resource="imagines.qrc">
-       <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
      </property>
     </widget>
    </widget>
@@ -194,10 +178,6 @@
      <property name="text">
       <string>账户信息</string>
      </property>
-     <property name="icon">
-      <iconset resource="imagines.qrc">
-       <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
-     </property>
     </widget>
     <widget class="QPushButton" name="credit_button_3">
      <property name="geometry">
@@ -216,10 +196,6 @@
      </property>
      <property name="text">
       <string>流水信息</string>
-     </property>
-     <property name="icon">
-      <iconset resource="imagines.qrc">
-       <normaloff>:/doge.jpg</normaloff>:/doge.jpg</iconset>
      </property>
     </widget>
    </widget>
@@ -257,35 +233,35 @@
    <widget class="QStackedWidget" name="TOTAL">
     <property name="geometry">
      <rect>
-      <x>-10</x>
+      <x>-30</x>
       <y>-30</y>
-      <width>601</width>
+      <width>631</width>
       <height>521</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page_4">
      <widget class="QStackedWidget" name="storage_func">
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>10</y>
+        <y>20</y>
         <width>511</width>
         <height>491</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_7">
        <widget class="QTableView" name="InfoBalance">
         <property name="geometry">
          <rect>
-          <x>10</x>
+          <x>0</x>
           <y>30</y>
-          <width>491</width>
+          <width>511</width>
           <height>361</height>
          </rect>
         </property>
@@ -460,42 +436,311 @@
      <widget class="QStackedWidget" name="credit_func">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>-10</x>
         <y>20</y>
-        <width>551</width>
-        <height>411</height>
+        <width>621</width>
+        <height>491</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_9">
        <widget class="QLabel" name="label_3">
         <property name="geometry">
          <rect>
-          <x>180</x>
-          <y>140</y>
-          <width>251</width>
-          <height>151</height>
+          <x>60</x>
+          <y>50</y>
+          <width>101</width>
+          <height>51</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>等线</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
         <property name="text">
-         <string>这是信用卡账户信息</string>
+         <string>卡号</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_7">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>120</y>
+          <width>101</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>等线</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>额度</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_8">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>240</y>
+          <width>181</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>等线</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>还款日期</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_9">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>180</y>
+          <width>181</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>等线</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>透支金额</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>300</y>
+          <width>181</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>等线</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>余额</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info1">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>50</y>
+          <width>191</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>等线</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info1_2">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>110</y>
+          <width>191</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>等线</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info1_3">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>180</y>
+          <width>191</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>等线</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>正在查询ing</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info1_4">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>240</y>
+          <width>191</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>等线</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info1_5">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>300</y>
+          <width>191</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>等线</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
         </property>
        </widget>
       </widget>
       <widget class="QWidget" name="page_10">
+       <widget class="QTableView" name="Credit_table">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>20</y>
+          <width>561</width>
+          <height>321</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="radioButton">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>390</y>
+          <width>131</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>黑体</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>透支</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="radioButton_2">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>420</y>
+          <width>131</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>黑体</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>还款/存款</string>
+        </property>
+       </widget>
        <widget class="QLabel" name="label_5">
         <property name="geometry">
          <rect>
-          <x>140</x>
-          <y>80</y>
-          <width>251</width>
-          <height>151</height>
+          <x>280</x>
+          <y>370</y>
+          <width>72</width>
+          <height>21</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>黑体</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
         <property name="text">
-         <string>这是信用卡流水信息</string>
+         <string>金额</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="Money_line">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>410</y>
+          <width>131</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>黑体</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_1">
+        <property name="geometry">
+         <rect>
+          <x>470</x>
+          <y>370</y>
+          <width>93</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>黑体</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>确定</string>
         </property>
        </widget>
       </widget>
