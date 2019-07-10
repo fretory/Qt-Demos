@@ -10,7 +10,13 @@
 #include <QtSql/QSqlTableModel>
 #include <QTableView>
 #include <QDebug>
-
+#include <QPrinter>
+#include <QPrintDialog>
+#include <QFileDialog>
+#include<QPrintPreviewDialog>
+#include<QPainter>
+#include<QStandardPaths>
+#include<QTextDocument>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -232,4 +238,70 @@ void MainWindow::on_pushButton_8_clicked()
     ui->Current_Pages->setText(QString("当前第%1页").arg(Current_Pages));
     RecordQuery(Current_Pages-1);
     Update_Status();
+}
+
+void MainWindow::on_pushButton_9_clicked()
+{
+    printData();
+
+}
+
+
+void MainWindow::printhtmltoPrinter( const QString & html)
+{
+    QPrinter  printer;
+    QPrintDialog printDialog(&printer, this);
+    if (printDialog.exec()) {
+        QTextDocument textDocument;
+        textDocument.setHtml(html);
+        textDocument.print(&printer);
+    }
+}
+
+void MainWindow::printhtmltoPdf(const QString & html)
+{
+    QString filename = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
+        filename += "\\default.pdf";
+        filename = QFileDialog::getSaveFileName(this, "Save File", filename, "Adobe PDF Files (*.pdf)");
+        if (filename.trimmed() == "") {
+            return;
+        }
+
+        QPrinter  printer;
+        printer.setPageSize(QPrinter::A4);
+        printer.setOutputFormat(QPrinter::PdfFormat);
+        printer.setOutputFileName(filename);
+
+        QTextDocument textDocument;
+        textDocument.setHtml(html);
+        textDocument.print(&printer);
+}
+
+void MainWindow::printData()
+{
+    QString html;
+
+    html+="<body><div style='text-align: center'>\
+          <h1>账单明细</h1><table border='1' align='center'\
+          width='600px' height='50px'><tr><th>流水号</th>\
+          <th>类型</th><th>变化金额</th><th>余额</th><th>结算日期</th></tr>";
+    for(int i=1;i<model->rowCount();i++)
+    {
+        QString test="<tr>";
+        for(int j=0;j<5;j++)
+        {
+            test+="<td>";
+            QModelIndex index=model->index(i,j,QModelIndex());
+            test+=model->data(index).toString();
+
+            test+="</td>";
+
+        }
+        test+="</tr>";
+        html+=test;
+    }
+    html+="</tr></table></div></body>";
+    qDebug()<<html;
+    printhtmltoPrinter(html);
+    printhtmltoPdf( html);
 }

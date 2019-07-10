@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QtSql/QSqlTableModel>
+#include <QPrinter>
 namespace Ui {
 class MainWindow;
 }
@@ -32,6 +33,8 @@ private slots:
 
     void on_pushButton_8_clicked();
 
+    void on_pushButton_9_clicked();
+
 private:
     Ui::MainWindow *ui;
     void init();
@@ -44,6 +47,9 @@ private:
     void Get_Pages();
     void Update_Status();//设置按钮是否可用;
     void RecordQuery(int limitIndex);
+    void printhtmltoPdf(const QString & html);//打印html到pdf
+    void printhtmltoPrinter( const QString & html);//打印html到打印机
+    void printData();//打印数据
 };
 
 #endif // MAINWINDOW_H
