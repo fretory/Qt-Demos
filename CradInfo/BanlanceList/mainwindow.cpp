@@ -25,7 +25,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->dateEdit->setMinimumDate(QDate::fromString("2016/6","yyyy/M"));
     setui();
 
-
+    QRegExp regx("[1-9][0-9]+$");
+    QValidator *validator = new QRegExpValidator(regx, ui->lineEdit );
+    ui->lineEdit->setValidator(validator);
 }
 
 MainWindow::~MainWindow()
@@ -50,39 +52,48 @@ void MainWindow::init()
     model = new QSqlTableModel(this);
     //指定使用哪个表
     model->setTable("CardInfo");
-    model->sort(0,Qt::SortOrder::DescendingOrder);
     //把model放到view
     //view中的数据库不允许修改
     ui->InfoBalance->setModel(model);
     model->select();
+    Get_Pages();
+    RecordQuery(0);
+    Update_Status();
+
 }
 
 void MainWindow::on_pushButton_4_clicked()
 {
     QDate last=QDate::currentDate().addDays(-7);
     model->setFilter(QObject::tr("DATETIME > '%1'").arg(last.toString("yyyy-MM-dd")));
+
     if(!ui->InfoBalance->verticalHeader()->count())
     {
+        ui->Current_Pages->setHidden(true);
+        ui->All_Pages->setHidden(true);
         QMessageBox::warning(this,"暂无消费","最近7天您还没有消费哦~");
-        model->setTable("CardInfo");
-        setui();
-        model->sort(0,Qt::SortOrder::DescendingOrder);
-        model->select();
+        on_pushButton_6_clicked();
     }
+    Get_Pages();
+    RecordQuery(0);
+    Update_Status();
 }
 
 void MainWindow::on_pushButton_3_clicked()
 {
     QDate last=QDate::currentDate().addMonths(-1);
     model->setFilter(QObject::tr("DATETIME > '%1'").arg(last.toString("yyyy-MM-dd")));
+
     if(!ui->InfoBalance->verticalHeader()->count())
     {
+        ui->Current_Pages->setHidden(true);
+        ui->All_Pages->setHidden(true);
         QMessageBox::warning(this,"暂无消费","最近1个月您还没有消费哦~");
-        model->setTable("CardInfo");
-        setui();
-        model->sort(0,Qt::SortOrder::DescendingOrder);
-        model->select();
+        on_pushButton_6_clicked();
     }
+    RecordQuery(0);
+    Get_Pages();
+    Update_Status();
 }
 
 void MainWindow::on_pushButton_2_clicked()
@@ -91,12 +102,14 @@ void MainWindow::on_pushButton_2_clicked()
     model->setFilter(QObject::tr("DATETIME > '%1'").arg(last.toString("yyyy-MM-dd")));
     if(!ui->InfoBalance->verticalHeader()->count())
     {
+        ui->Current_Pages->setHidden(true);
+        ui->All_Pages->setHidden(true);
         QMessageBox::warning(this,"暂无消费","最近3个月您还没有消费哦~");
-        model->setTable("CardInfo");
-        setui();
-        model->sort(0,Qt::SortOrder::DescendingOrder);
-        model->select();
+        on_pushButton_6_clicked();
     }
+    Get_Pages();
+    RecordQuery(0);
+    Update_Status();
 }
 
 void MainWindow::setui()
@@ -114,6 +127,9 @@ void MainWindow::on_pushButton_6_clicked()
     setui();
     model->sort(0,Qt::SortOrder::DescendingOrder);
     model->select();
+    Get_Pages();
+    RecordQuery(0);
+    Update_Status();
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -131,11 +147,89 @@ void MainWindow::on_pushButton_clicked()
     model->setFilter(QObject::tr("DATETIME > '%0' AND DATETIME < '%1'").arg(lefttime.toString("yyyy-MM-dd")).arg(righttime.toString("yyyy-MM-dd")));
     if(!ui->InfoBalance->verticalHeader()->count())
     {
+        ui->Current_Pages->setHidden(true);
+        ui->All_Pages->setHidden(true);
         QMessageBox::warning(this,"暂无消费",QString("在%1，您还没有消费哦~").arg(lefttime.toString("yyyy年MM月")));
-
-        model->setTable("CardInfo");
-        setui();
-        model->sort(0,Qt::SortOrder::DescendingOrder);
-        model->select();
+        on_pushButton_6_clicked();
     }
+    Get_Pages();
+    RecordQuery(0);
+    Update_Status();
+}
+
+void MainWindow::Get_Pages()
+{
+    Total_RecrodCount=model->rowCount();
+    Total_Pages=(Total_RecrodCount%PageRecordCount==0?0:1)+Total_RecrodCount/PageRecordCount;
+    Current_Pages=1;
+    ui->All_Pages->setText(QString("共%1页").arg(Total_Pages));
+    ui->Current_Pages->setText("当前第1页");
+}
+
+/*
+ * 向前向后按钮是否可以被按下的逻辑判断
+ */
+
+void MainWindow::Update_Status()
+{
+    ui->Current_Pages->setHidden(false);
+    ui->All_Pages->setHidden(false);
+    if(Current_Pages==1&&Current_Pages==Total_Pages)
+    {
+        ui->pushButton_5->setEnabled(false);
+        ui->pushButton_7->setEnabled(false);
+    }
+    else if(Current_Pages==1)
+    {
+        ui->pushButton_5->setEnabled(false);
+        ui->pushButton_7->setEnabled(true);
+    }
+    else if(Current_Pages==Total_Pages)
+    {
+        ui->pushButton_5->setEnabled(true);
+        ui->pushButton_7->setEnabled(false);
+    }
+    else {
+        ui->pushButton_5->setEnabled(true);
+        ui->pushButton_7->setEnabled(true);
+    }
+}
+
+void MainWindow::RecordQuery(int limitIndex)
+{
+
+    QString szQuery = QString("select * from CardInfo  ORDER BY ID DESC limit %1,%2").arg(QString::number(limitIndex*PageRecordCount+1)).arg(QString::number(PageRecordCount));
+    model->QSqlQueryModel::setQuery(szQuery);
+
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    Current_Pages-=1;
+    ui->Current_Pages->setText(QString("当前第%1页").arg(Current_Pages));
+    RecordQuery(Current_Pages-1);
+    Update_Status();
+}
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    Current_Pages+=1;
+    ui->Current_Pages->setText(QString("当前第%1页").arg(Current_Pages));
+    RecordQuery(Current_Pages-1);
+    Update_Status();
+}
+
+void MainWindow::on_pushButton_8_clicked()
+{
+    long pages=ui->lineEdit->text().toLong();
+    if(pages<=0||pages>Total_Pages)
+    {
+        QMessageBox::warning(this,"输入的页面有误","请输入正确的页数");
+        ui->lineEdit->clear();
+        return;
+    }
+    Current_Pages=pages;
+    ui->Current_Pages->setText(QString("当前第%1页").arg(Current_Pages));
+    RecordQuery(Current_Pages-1);
+    Update_Status();
 }

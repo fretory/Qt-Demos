@@ -24,6 +24,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 CONFIG += c++11
 QT += sql
+QT += printsupport
 SOURCES += \
         main.cpp \
         mainwindow.cpp
