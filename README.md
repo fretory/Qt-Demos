@@ -1,3 +1,6 @@
-# Qt-c++课程设计
+# Qt-c++Demos
 
-一个个人银行管理系统
+** cardinfo 流水信息
+** bankmanager 银行管理系统
+
+以上采用的是QT 5.12.0 MINGW 编译完成
