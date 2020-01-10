@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PosiSelector</class>
+ <widget class="QWidget" name="PosiSelector">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>116</width>
+    <height>120</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QTableWidget" name="qtablewidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>90</width>
+     <height>120</height>
+    </rect>
+   </property>
+   <property name="columnCount">
+    <number>3</number>
+   </property>
+   <column/>
+   <column/>
+   <column/>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

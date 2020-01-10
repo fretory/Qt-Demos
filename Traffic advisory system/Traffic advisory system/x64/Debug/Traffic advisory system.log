@@ -1,0 +1,24 @@
+﻿生成启动时间为 2020/1/5 12:18:49。
+     1>项目“C:\Users\Administrator\Desktop\Traffic advisory system\Traffic advisory system\Traffic advisory system.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\lab\VS\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\lab\QT\5.5\msvc2013_64\include /I.\GeneratedFiles\Debug /ID:\lab\QT\5.5\msvc2013_64\include\QtCore /ID:\lab\QT\5.5\msvc2013_64\include\QtGui /ID:\lab\QT\5.5\msvc2013_64\include\QtSql /ID:\lab\QT\5.5\msvc2013_64\include\QtOpenGL /ID:\lab\QT\5.5\msvc2013_64\include\QtWidgets /Zi /nologo /W1 /WX- /Od /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_OPENGL_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /FR"x64\Debug\\" /Gd /TP /errorReport:prompt Graph.cpp
+         Graph.cpp
+     1>c:\users\administrator\desktop\traffic advisory system\traffic advisory system\graph.cpp(256): warning C4700: 使用了未初始化的局部变量“cost”
+       Link:
+         D:\lab\VS\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Administrator\Desktop\Traffic advisory system\x64\Debug\\Traffic advisory system.exe" /NOLOGO /LIBPATH:D:\lab\QT\5.5\msvc2013_64\lib qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Sqld.lib Qt5OpenGLd.lib opengl32.lib glu32.lib Qt5Widgetsd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Administrator\Desktop\Traffic advisory system\x64\Debug\Traffic advisory system.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Administrator\Desktop\Traffic advisory system\x64\Debug\Traffic advisory system.lib" /MACHINE:X64 x64\Debug\addItem.obj
+         x64\Debug\moc_addItem.obj
+         x64\Debug\moc_posiselector.obj
+         x64\Debug\moc_trafficadvisorysystem.obj
+         x64\Debug\qrc_trafficadvisorysystem.obj
+         x64\Debug\Graph.obj
+         x64\Debug\main.obj
+         x64\Debug\posiselector.obj
+         x64\Debug\trafficadvisorysystem.obj
+         Traffic advisory system.vcxproj -> C:\Users\Administrator\Desktop\Traffic advisory system\x64\Debug\Traffic advisory system.exe
+       BscMake:
+         D:\lab\VS\VC\bin\bscmake.exe /nologo /o"C:\Users\Administrator\Desktop\Traffic advisory system\x64\Debug\Traffic advisory system.bsc" /n x64\Debug\addItem.sbr x64\Debug\moc_addItem.sbr x64\Debug\moc_posiselector.sbr x64\Debug\moc_trafficadvisorysystem.sbr x64\Debug\qrc_trafficadvisorysystem.sbr x64\Debug\Graph.sbr x64\Debug\main.sbr x64\Debug\posiselector.sbr x64\Debug\trafficadvisorysystem.sbr
+     1>已完成生成项目“C:\Users\Administrator\Desktop\Traffic advisory system\Traffic advisory system\Traffic advisory system.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:03.12

@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="Trafficadvisorysystem">
+    <file>pics/longbg.png</file>
+    <file>pics/smallButton.png</file>
+    <file>pics/button.png</file>
+    <file>pics/right.png</file>
+    <file>pics/icon.png</file>
+    <file>pics/background1000600.png</file>
+    <file>pics/close.png</file>
+    <file>pics/min.png</file>
+    <file>pics/add_choose.png</file>
+  </qresource>
+</RCC>
